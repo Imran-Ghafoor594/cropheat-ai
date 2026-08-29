@@ -224,10 +224,8 @@ The LLM (`backend/services/advisory_service.py`) receives the **already-computed
 - Live Anthropic key smoke test
 - Parallel heatmap-tile-to-field join using true polygon area-weighting (currently nearest-centroid)
 
-**<div align="center">
-
-*"Code is the closest thing we have to turning ideas into reality — I build to learn, and learn to build better."*
+<div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=150&section=footer" width="100%"/>
 
-</div>**
+</div>
