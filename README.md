@@ -1,6 +1,8 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=300&color=0:24243e,50:302b63,100:0f0c29&text=CROPHEAT%20AI&fontSize=60&fontColor=FFFFFF&animation=fadeIn&fontAlignY=45"/></div>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=300&color=0:24243e,50:302b63,100:0f0c29&text=CROPHEAT%20AI&fontSize=50&fontColor=FFFFFF&animation=fadeIn&fontAlignY=45"/></div>
+
+
 <p align="center"> <img src="https://img.shields.io/badge/status-hackathon%20submission-orange?style=for-the-badge" alt="status" /> <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="python" /> <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="fastapi" /> <img src="https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="nextjs" /> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="typescript" /> </p> <p align="center"> <img src="https://img.shields.io/badge/FortyGuard%20API-LIVE-4ADE80?style=flat-square" alt="fortyguard live" /> <img src="https://img.shields.io/badge/AI%20Advisory-Claude%20%2F%20Rule--Based%20Fallback-7C3AED?style=flat-square" alt="advisory" /> <img src="https://img.shields.io/badge/Tests-4%2F4%20passing-4ADE80?style=flat-square" alt="tests" /> <img src="https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square" alt="license" /> </p>
 
 Turning hyperlocal climate intelligence into crop-specific heat-risk decisions.
@@ -213,11 +215,6 @@ CropHeat AI is an **explainable hybrid risk engine**, not a trained ML model —
 
 The LLM (`backend/services/advisory_service.py`) receives the **already-computed** risk score, level, and top contributing factors as structured input, and is prompted only to explain that result in plain language and suggest actions — it never calculates or overrides the risk score itself. If no `ANTHROPIC_API_KEY` is set, or the call fails, a deterministic rule-based advisory (keyed off risk level) is shown instead, clearly labeled `RULE_BASED_FALLBACK` — never presented as AI-generated when it isn't.
 
-## Security notes
-
-- `FORTYGUARD_API_KEY` and `ANTHROPIC_API_KEY` are read server-side only (`backend/config.py`), never sent to the frontend
-- `.env` is git-ignored; `.env.example` ships with placeholders only
-- `GET /api/health/fortyguard` reports connectivity/credit status without ever exposing the key itself
 
 ## Future improvements
 
@@ -226,3 +223,5 @@ The LLM (`backend/services/advisory_service.py`) receives the **already-computed
 - Full what-if simulation (exposure/persistence, not just temperature)
 - Live Anthropic key smoke test
 - Parallel heatmap-tile-to-field join using true polygon area-weighting (currently nearest-centroid)
+
+
