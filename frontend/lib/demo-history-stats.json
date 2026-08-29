@@ -1,0 +1,8 @@
+{
+  "window_start": "2024-07-12",
+  "window_end": "2024-07-18",
+  "region_label": "Diridon, San Jose, CA (FortyGuard sample AOI)",
+  "exceedance": { "units": "hour", "n_cells": 329, "min": 25.5136, "max": 40.6769, "mean": 35.2976 },
+  "persistence": { "units": "hour", "n_cells": 329, "min": 2.0687, "max": 8.7302, "mean": 6.3155 },
+  "note": "These are the REAL aggregate min/mean/max values FortyGuard returned for this 7-day window, taken verbatim from the bundled quickstart-repo sample data. A true day-by-day trend line would require one heatmap call per day, which is deliberately avoided to conserve the hackathon's 2M-credit budget -- see docs/methodology.md."
+}

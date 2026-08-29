@@ -1,0 +1,33 @@
+{
+  "crop": "cotton",
+  "scientific_name": "Gossypium hirsutum",
+  "growth_stages": [
+    {
+      "stage": "vegetative",
+      "heat_sensitivity": "low",
+      "notes": "Optimum temperature for stem/leaf growth is ~30C; growth rate and photosynthesis begin to decline once temperatures reach ~35C.",
+      "reference_temperature_c": 35,
+      "sources": ["Bibi et al. 2008/2010, cited in Cotton.org Stress Physiology in Cotton, Ch.1"]
+    },
+    {
+      "stage": "flowering",
+      "heat_sensitivity": "critical",
+      "notes": "Reproductive success negatively affected above 28-30C; cotton is highly sensitive during the first five weeks of flowering and boll development. Pollen germination peaks near 28C and declines precipitously above 37C.",
+      "reference_temperature_c": 30,
+      "reference_detail": "Reproductive success negatively affected with temperatures above 28-30C (Oosterhuis & Snider 2011). Fruit retention/boll size decline as mean temperature rises above ~28C, with very low retention above 32C.",
+      "sources": [
+        "Oosterhuis & Snider, J. Cotton Research (2023) - https://link.springer.com/article/10.1186/s42397-023-00154-x",
+        "Brown & Zeiher, AZ1448, Univ. Arizona - https://cales.arizona.edu/azmet/az1448.pdf",
+        "Burke et al. 2004 (pollen germination peak 28C, decline >37C)"
+      ]
+    },
+    {
+      "stage": "boll_development",
+      "heat_sensitivity": "critical",
+      "notes": "Very low fruit retention once mean temperatures exceed ~32C; boll abscission 3-5 days after bloom is the dominant heat-stress mechanism.",
+      "reference_temperature_c": 32,
+      "sources": ["Brown & Zeiher, AZ1448, Univ. Arizona"]
+    }
+  ],
+  "engine_notes": "Cotton has the widest cited range (28-32C) of the four crops because retention decline is gradual rather than a sharp step function. CropHeat uses 30C as the engine default for flowering (mid-point of the cited onset range) and 32C for boll development, both documented here rather than hidden in code."
+}

@@ -1,0 +1,42 @@
+{
+  "crop": "maize",
+  "scientific_name": "Zea mays",
+  "growth_stages": [
+    {
+      "stage": "vegetative",
+      "heat_sensitivity": "low",
+      "notes": "Photosynthesis and vegetative growth impacts documented mainly above ~38C.",
+      "reference_temperature_c": 38,
+      "sources": ["Crafts-Brandner & Salvucci 2002, cited in Djalovic et al., The Plant Genome (2024)"]
+    },
+    {
+      "stage": "tasseling",
+      "heat_sensitivity": "critical",
+      "notes": "Male flower organs (tassels) are the most heat-vulnerable tissue; anther dehiscence and pollen viability/germination are directly impaired.",
+      "reference_temperature_c": 35,
+      "reference_detail": "Moderate heat stress (35/25C day/night for 48h) during the pollen tetrad stage greatly reduces kernel number per ear by impeding pollen viability.",
+      "sources": [
+        "Djalovic et al., The Plant Genome (2024) - https://acsess.onlinelibrary.wiley.com/doi/10.1002/tpg2.20378",
+        "Begcy et al. 2019, cited in Djalovic et al. 2024"
+      ]
+    },
+    {
+      "stage": "silking",
+      "heat_sensitivity": "critical",
+      "notes": "Silks (female reproductive tissue) are directly exposed to ambient heat; heat stress causes cell death in silk hairs and pollen-tube growth arrest, reducing seed set.",
+      "reference_temperature_c": 35,
+      "reference_detail": "35/25C day/night heat stress on silks 3 days after emergence caused silk-hair cell death rising from 1.5% (control) to 62-65% after 24-48h exposure.",
+      "sources": [
+        "Heat-stress-induced ROS in maize silks..., iScience/ScienceDirect (2024) - https://www.sciencedirect.com/science/article/pii/S2589004224013063"
+      ]
+    },
+    {
+      "stage": "grain_filling",
+      "heat_sensitivity": "moderate",
+      "notes": "Prolonged exposure above 35C during the reproductive stage is detrimental to reproductive success, seed set, and yield.",
+      "reference_temperature_c": 35,
+      "sources": ["Shao et al. 2021, cited in Djalovic et al., The Plant Genome (2024)"]
+    }
+  ],
+  "engine_notes": "35C is a recurring experimental threshold across multiple independent maize studies for the tasseling/silking window, giving it more confidence than a single-study figure. Field microclimate and genotype still shift the real threshold."
+}

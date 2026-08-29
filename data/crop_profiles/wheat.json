@@ -1,0 +1,35 @@
+{
+  "crop": "wheat",
+  "scientific_name": "Triticum aestivum",
+  "growth_stages": [
+    {
+      "stage": "vegetative",
+      "heat_sensitivity": "low",
+      "notes": "Heat mainly accelerates development rate (shortens duration) rather than directly damaging tissue at this stage.",
+      "reference_temperature_c": null
+    },
+    {
+      "stage": "flowering",
+      "heat_sensitivity": "critical",
+      "notes": "Most heat-sensitive stage. Pollen viability and grain set are damaged by short heat episodes during meiosis/anthesis.",
+      "reference_temperature_c": 28,
+      "reference_detail": "Grain number most sensitive to heat 300-200 degree-days before flowering at a 28C threshold; a single hot day (30/20C day/night) during meiosis significantly reduces pollen viability.",
+      "sources": [
+        "Girousse et al., Field Crops Research 316 (2024) 109489 - https://www.sciencedirect.com/science/article/pii/S0378429024002429",
+        "Saini & Aspinall 1982, cited in Girousse et al. 2024"
+      ]
+    },
+    {
+      "stage": "grain_filling",
+      "heat_sensitivity": "high",
+      "notes": "Each post-flowering hour above 32C reduces individual grain weight; effect measured 0-500 degree-days after flowering.",
+      "reference_temperature_c": 32,
+      "reference_detail": "Each hour with T>32C post-flowering reduced individual grain weight by ~0.26 mg/spike and grain yield by 2.44 g/m^2 at canopy level.",
+      "sources": [
+        "Girousse et al., Field Crops Research 316 (2024) 109489",
+        "Semenov & Stratonovitch, J. Exp. Bot. 66(12):3599 (2015) - https://academic.oup.com/jxb/article/66/12/3599/524111"
+      ]
+    }
+  ],
+  "engine_notes": "Thresholds are peer-reviewed research findings, not FortyGuard-provided or CropHeat-invented values. The 28C/32C figures are field-measured correlations, not universal biological constants -- genotype and local acclimation shift the real threshold."
+}

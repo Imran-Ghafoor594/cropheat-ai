@@ -1,0 +1,33 @@
+{
+  "crop": "rice",
+  "scientific_name": "Oryza sativa",
+  "growth_stages": [
+    {
+      "stage": "vegetative",
+      "heat_sensitivity": "low",
+      "notes": "Comparatively heat-tolerant relative to flowering; not a focus of the cited literature.",
+      "reference_temperature_c": null
+    },
+    {
+      "stage": "flowering",
+      "heat_sensitivity": "critical",
+      "notes": "Flowering (anthesis/fertilization) is the most heat-sensitive stage in rice. Sterility is caused by poor anther dehiscence and low pollen production/germination.",
+      "reference_temperature_c": 35,
+      "reference_detail": "Spikelets exposed to temperatures >35C for as little as ~1 hour at anthesis show increased sterility; classic literature reports >35C for ~5 days causes complete sterility. A lower threshold of 33C for spikelet sterility has also been reported (genotype-dependent).",
+      "sources": [
+        "Jagadish et al., J. Exp. Bot. 58(7):1627 (2007) - https://academic.oup.com/jxb/article/58/7/1627/512931",
+        "Field-level evaluation of rice ILs for heat tolerance, PMC4938818 - https://pmc.ncbi.nlm.nih.gov/articles/PMC4938818/",
+        "Satake & Yoshida 1978, cited in Jagadish et al. 2007",
+        "Bheemanahalli et al. 2016 (33C threshold), cited in secondary source"
+      ]
+    },
+    {
+      "stage": "grain_filling",
+      "heat_sensitivity": "moderate",
+      "notes": "Heat during grain filling reduces harvest index and grain quality, though less catastrophically than flowering-stage sterility.",
+      "reference_temperature_c": null,
+      "sources": ["Prasad et al., Field Crops Research 95:398-411 (2006)"]
+    }
+  ],
+  "engine_notes": "35C/short-duration is the most frequently replicated threshold across the cited studies for rice flowering; some genotypes show sterility onset closer to 33C. CropHeat treats 35C as the default engine threshold and documents the 33C variant as genotype-dependent uncertainty, not a hidden assumption."
+}

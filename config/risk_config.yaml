@@ -1,0 +1,51 @@
+# CropHeat AI — Risk Engine Configuration
+#
+# IMPORTANT: The weights and thresholds below are ENGINEERING DEFAULTS,
+# not validated scientific coefficients. They express a defensible,
+# documented prioritization (duration/persistence > peak temperature,
+# per the FortyGuard quickstart repo's own finding that env_params'
+# heat_index artifactually peaks overnight) -- they are NOT derived from
+# a fitted model against labeled crop-damage outcomes, because no such
+# labeled dataset exists (see docs/methodology.md).
+#
+# risk_score = sum(component_score * component_weight), each component
+# pre-normalized to 0-100 before weighting. Final score clipped to 0-100.
+
+component_weights:
+  temperature: 0.15          # current/peak temperature vs crop-stage threshold
+  exposure: 0.15             # heatmap "exceedance" — hours past threshold
+  persistence: 0.20          # heatmap "persistence" — longest continuous run past threshold
+  humidity_wetbulb: 0.15     # env_params: apparent_temperature_celsius, wet_bulb_temperature_celsius, relative_humidity_percent
+  crop_sensitivity: 0.15     # static, from crop_profiles/*.json heat_sensitivity rating
+  growth_stage: 0.20         # static, from crop_profiles/*.json — highest weight because
+                              # growth-stage timing is the dominant factor in every cited
+                              # study (flowering/silking/boll-development windows)
+
+risk_levels:
+  # These bands are CropHeat engineering defaults for communicating relative
+  # severity to a non-technical user. They are NOT a published agronomic
+  # standard and must be presented in the UI as such.
+  low:      { min: 0,  max: 24 }
+  moderate: { min: 25, max: 49 }
+  high:     { min: 50, max: 74 }
+  critical: { min: 75, max: 100 }
+
+data_source_thresholds:
+  # Which env_params fields CropHeat requests, respecting the Basic-tier
+  # 3-parameter cap (see docs: FortyGuard API Basic plan = "up to 3
+  # user-selected" environmental parameters).
+  env_params_selected:
+    - apparent_temperature_celsius
+    - wet_bulb_temperature_celsius
+    - relative_humidity_percent
+  # heat_index_celsius intentionally excluded from the default 3 on Basic tier:
+  # the quickstart repo documents that env_params anchors one temperature value
+  # across all 24 hours, causing heat_index_celsius to artifactually peak
+  # overnight rather than at the true afternoon maximum. apparent_temperature
+  # and wet_bulb are less prone to this specific artifact and are prioritized.
+
+heatmap_defaults:
+  granularity_m: 100          # coarsest available tile size -> cheapest credit cost
+  exceedance_direction: "above"
+  # threshold_c is set per-request from the active crop's growth-stage
+  # reference_temperature_c (see data/crop_profiles/*.json), not hardcoded here.
