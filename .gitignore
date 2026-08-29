@@ -13,7 +13,7 @@ env/
 *.egg-info/
 .pytest_cache/
 *.log
-_init_.py
+__init__.py
 
 # Node / Next.js
 node_modules/
