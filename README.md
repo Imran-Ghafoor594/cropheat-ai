@@ -36,7 +36,7 @@ CropHeat AI takes FortyGuard's real hyperlocal temperature intelligence (spatial
 
 Experience the **CropHeat AI** application live:
 
-👉 [[Live Demo — CropHeat AI](https://cropheat-ai.vercel.app/))
+👉 [Live Demo — CropHeat AI](https://cropheat-ai.vercel.app/)
 
 > Explore the platform to analyze crop heat conditions and access AI-powered agricultural insights.
 
@@ -167,7 +167,6 @@ Runs entirely against bundled real FortyGuard sample data — no API key or netw
 
 ## What does NOT work yet / limitations
 
-- **No Docker / deployment config** — local dev only for now
 - **AI advisory not smoke-tested against a live Anthropic key** — falls back to deterministic rules, confirmed working
 - **Region AOI is a small (~4 sq mi) fixed placeholder** around San Jose, CA, sized to fit FortyGuard's Basic-tier heatmap area cap — not yet a user-selectable location
 - **Simulation only varies temperature** — exposure/persistence sliders and full crop/stage recompute are not yet wired to a live recalculation
@@ -227,7 +226,6 @@ The LLM (`backend/services/advisory_service.py`) receives the **already-computed
 
 ## Future improvements
 
-- Docker Compose setup for one-command deployment
 - User-selectable region/AOI (currently a fixed small placeholder)
 - Full what-if simulation (exposure/persistence, not just temperature)
 - Live Anthropic key smoke test
