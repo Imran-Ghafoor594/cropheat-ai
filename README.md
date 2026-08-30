@@ -31,6 +31,15 @@ CropHeat AI takes FortyGuard's real hyperlocal temperature intelligence (spatial
 - **Interactive heat-risk map** (Leaflet, real GeoJSON tiles), 24-hour heat exposure timeline, ranked top-risk-fields list, AI advisory panel, what-if temperature simulator, and a real 7-day historical view
 - **Honest data-source labeling** — every card shows `LIVE`, `CACHED`, `DEMO DATA`, or `SIMULATED` — never presented as something it isn't
 
+
+## Live Demo
+
+Experience the **CropHeat AI** application live:
+
+👉 [[Live Demo — CropHeat AI](https://cropheat-ai.vercel.app/))
+
+> Explore the platform to analyze crop heat conditions and access AI-powered agricultural insights.
+
 ## Architecture
 
 ```mermaid
