@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: cropheat-ai-backend
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: FORTYGUARD_API_KEY
+        sync: false        # set manually in the Render dashboard -- never commit real keys
+      - key: FORTYGUARD_BASE_URL
+        value: https://api.fortyguard.com
+      - key: CREDIT_BUDGET_FLOOR_FRACTION
+        value: "0.05"
+      - key: ANTHROPIC_API_KEY
+        sync: false         # optional -- omit to use the rule-based advisory fallback
